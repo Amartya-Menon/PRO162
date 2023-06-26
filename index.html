@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"> </script>
+<script src = "./throw.js"></script>
+
+
+</head>
+<body>
+<a-scene id="scene">
+<!--Assets-->
+<a-assets>
+    <a-asset-item id="pins" src="./assets/pin.gltf">
+
+    </a-asset-item>
+</a-assets>
+
+
+ 
+
+<!--Camera and Cursor-->
+ 
+<a-entity
+ id="camera"
+ camera
+ position="0 1.6 0"
+ wasd-controls
+ look-controls="pointerLockEnabled: false"        
+>
+<a-entity bowling></a-entity>
+ <a-cursor></a-cursor>        
+</a-entity>
+
+
+
+<!--Ground-->
+<a-plane
+id="ground"
+repeat="5 5"
+position="0 1 0"
+rotation="-90 0 0"
+height="200"
+width="200"
+color="cyan"
+static-body
+visible="true"
+>
+</a-plane>
+    
+<!--Pins-->
+    <a-cylinder gltf-model="#pins" position="-0.2 1.2 -2.5" color="tomato" depth="0.5" height="0.1" width="0.1" radius="0.1" dynamic-body mass="30" ></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="0 1.2 -2.2" color="tomato" depth="0.5" height="0.1" width="0.5" radius ="0.1" dynamic-body mass="30" ></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="0.2 1.2 -2.5" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1" dynamic-body mass="30"></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="-0.5 1.2 -2.8" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1"dynamic-body mass="30"></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position= "0.5 1.2 -2.8" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1" dynamic-body mass="30"></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="-0.8 1.2 -3" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1" dynamic-body mass="30"></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="0.8 1.2 -3" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1" dynamic-body mass="30"></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="-0.11 1.2 -3.2" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1" dynamic-body mass="30"></a-cylinder>
+
+      <a-cylinder gltf-model="#pins" position="0.11 1.2 -3.2" color="tomato" depth="0.5" height="0.1" width="0.5" radius="0.1" dynamic-body mass="30" ></a-cylinder> 
+<!--Border-->
+      <a-box position="-3 1.2 -3.2" rotation="-90 0 0" color="red" depth="1" height="12" width="1" static-body></a-box> 
+
+      <a-box position=" 3 1.2 -3.2" rotation="-90 0 0" color="red" depth="1" height="12" width="1" static-body></a-box>
+
+</a-scene>
+
+ 
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
